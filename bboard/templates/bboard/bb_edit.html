@@ -1,0 +1,12 @@
+{% extends "bboard/layout/basic.html" %}
+
+{% block title %}Исправление объявления{% endblock %}
+    
+{% block content %}
+    <h2>Исправление объявления</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Сохранить">
+    </form>
+{% endblock %}

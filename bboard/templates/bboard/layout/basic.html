@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>{% block title %}Главная{% endblock %} - Доска обьявлений</title>
+        <link rel="stylesheet" href="{% static 'bboard/style.css' %}">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/bboard/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/bboard/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/bboard/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/static/bboard/favicon/site.webmanifest">
+    </head>
+    <body>
+        <header>
+            <h1>Обьявления</h1>
+        </header>
+        <nav>
+            <a href="{% url 'bboard:index' %}">Главная</a>
+            <a href="{% url 'bboard:add' %}">Добавить</a>
+            {% for rubric in rubrics %}
+                <a href="{% url 'bboard:by_rubric' rubric.pk %}">{{ rubric.name }}</a>
+            {% endfor %}
+        </nav>
+        <section>
+            {% block content %}
+            {% endblock %}
+        </section>
+    </body>
+</html>

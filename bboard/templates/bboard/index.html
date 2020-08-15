@@ -1,0 +1,14 @@
+{% extends "bboard/layout/basic.html" %}
+
+{% block content %}
+    {% for bb in bbs %}
+            <h2><a href="{% url 'bboard:detail' pk=bb.pk %}">{{ bb.title }}</a></h2>
+            <p>{{ bb.content }}</p>
+            <p>
+                {{ bb.published|date:"d.m.Y H:i:s" }}
+                <a style="margin-left: 10px" href="{% url 'bboard:edit' pk=bb.pk %}">Изменить</a>
+                <a style="margin-left: 10px" href="{% url 'bboard:delete' pk=bb.pk %}">Удалить</a>
+            </p>
+        </div>
+    {% endfor %}
+{% endblock %}
