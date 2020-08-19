@@ -1,10 +1,7 @@
-{% extends "bboard/layout/basic.html" %}
+{% extends "layout/basic.html" %}
 
-{% block title %} {{ current_rubric.name }} {% endblock %}
-    
 {% block content %}
     <div class="container products">
-    <h3>Рубрика: {{ current_rubric.name }}</h3>
     {% for bb in bbs %}
 
         {% if forloop.counter0|divisibleby:"2" == True %}
@@ -16,6 +13,9 @@
 
         <div class="col-6">
             <div class="card text-left">
+                <div class="card-header">
+                    {{ bb.rubric.name }}
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">
                         <a href="{% url 'bboard:detail' pk=bb.pk %}">{{ bb.title }}</a>
