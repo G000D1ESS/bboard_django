@@ -1,14 +1,34 @@
 {% extends "bboard/layout/basic.html" %}
 
 {% block content %}
+    <div class="container">
     {% for bb in bbs %}
-            <h2><a href="{% url 'bboard:detail' pk=bb.pk %}">{{ bb.title }}</a></h2>
-            <p>{{ bb.content }}</p>
-            <p>
-                {{ bb.published|date:"d.m.Y H:i:s" }}
-                <a style="margin-left: 10px" href="{% url 'bboard:edit' pk=bb.pk %}">Изменить</a>
-                <a style="margin-left: 10px" href="{% url 'bboard:delete' pk=bb.pk %}">Удалить</a>
-            </p>
+
+        {% if forloop.counter0|divisibleby:"2" == True %}
+            {% if forloop.first != True %}
+                </div>
+            {% endif %}
+            <div class="row">
+        {% endif %}
+
+        <div class="col-6">
+            <div class="card text-left">
+                <div class="card-header">
+                    {{ bb.rubric.name }}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="{% url 'bboard:detail' pk=bb.pk %}">{{ bb.title }}</a>
+                    </h5>
+                    <p class="card-text">{{ bb.content }}</p>
+                    <p>{{ bb.published|date:"d.m.Y H:i:s" }}</p>
+                </div>
+                <div class="card-footer">
+                    <a class="btn btn-light" href="{% url 'bboard:edit' pk=bb.pk %}">Изменить</a>
+                    <a class="btn btn-danger" href="{% url 'bboard:delete' pk=bb.pk %}">Удалить</a>
+                </div>
+            </div>
         </div>
     {% endfor %}
+    </div>
 {% endblock %}
