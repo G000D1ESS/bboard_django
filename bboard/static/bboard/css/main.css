@@ -24,6 +24,10 @@ section {
     margin-left: 180px;
 }
 
+.card {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 
 .nav-link:link, .nav-link:visited, .nav-link:active {
     color: #8857e5;
@@ -32,11 +36,6 @@ section {
 
 .nav-link:hover {
     color: #ca6bf5 !important;
-}
-
-.row {
-    margin-top: 15px;
-    margin-bottom: 15px;
 }
 
 * {
