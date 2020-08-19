@@ -29,6 +29,16 @@ section {
     margin-bottom: 15px;
 }
 
+.card-header {
+    text-align: center;
+    background-color: #f6ecfd;
+    color: #8a82a0;
+}
+
+.products .card-footer {
+    background-color: #ffffff !important;
+}
+
 .nav-link:link, .nav-link:visited, .nav-link:active {
     color: #8857e5;
     text-decoration: none !important;
