@@ -1,5 +1,7 @@
 # BBoard on Django
 
+![Preview](https://i.yapx.ru/Ino9T.jpg)
+
 ##### This project was created to **advertise the sale of goods on the Internet.**
 
 To run the project, you need:
@@ -7,8 +9,6 @@ To run the project, you need:
 - `Django framework` - latest version
 - `Settings.py`
 
-Command to run: `manage.py runserver <ip>:<host>`
+**Command to run:** `manage.py runserver <ip>:<host>`
 
-Example: `manage.py runserver localhost:80`
-
-
+_Example:_ `manage.py runserver localhost:80`

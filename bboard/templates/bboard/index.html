@@ -26,7 +26,7 @@
                     <div class="row justify-content-between" style="padding: 0px 10px 0px 10px;">
                         <div class="btn-group" role="group" aria-label="Basic example">
                           <a class="btn btn-outline-primary" href="{% url 'bboard:edit' pk=bb.pk %}">Изменить</a>
-                          <a class="btn btn-outline-dangerw" href="{% url 'bboard:delete' pk=bb.pk %}">Удалить</a>
+                          <a class="btn btn-outline-danger" href="{% url 'bboard:delete' pk=bb.pk %}">Удалить</a>
                         </div>
                         <div class="btn disabled">
                             {{ bb.published|date:"d.m.Y H:i:s" }}
