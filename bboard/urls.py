@@ -21,7 +21,7 @@ urlpatterns = [
          name='reset_password'),
     path('accounts/reset_password/done',
         PasswordResetDoneView.as_view(
-            template_name='registration/passsword_reset_done.html'),
+            template_name='registration/password_reset_done.html'),
         name='password_reset_done'),
 
     path('', index, name='index'),
