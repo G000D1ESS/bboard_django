@@ -1,17 +1,22 @@
 {% extends "layout/basic.html" %}
+{% load bootstrap4 %}
 
 {% block title %}Вход{% endblock %}
 
 {% block content %}
     <h2>Вход</h2>
     {% if user.is_authenticated %}
-    <p><strong>{{ user|capfirst }}</strong>, вы уже выполнили вход!</p>
+        <p><strong>{{ user|capfirst }}</strong>, вы уже выполнили вход!</p>
     {% else %}
-        <form method="POST">
+        <form method="POST" class="form col-4">
             {% csrf_token %}
-            {{ form.as_p }}
+            {% bootstrap_form form %}
             <input type="hidden" name="next" value="{{ next }}">
-            <input class="btn btn-success" type="submit" value="Войти">
+            {% buttons %}
+                <button type="submit" class="btn btn-success">
+                    Войти
+                </button>
+            {% endbuttons %}
         </form>
     {% endif %}
 {% endblock %}

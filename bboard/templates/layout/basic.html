@@ -1,22 +1,24 @@
 {% load static %}
+{% load bootstrap4 %}
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>{% block title %}Главная{% endblock %} - Доска обьявлений</title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>{% block title %}Главная{% endblock %} - Доска обьявлений</title>
 
-        <link rel="stylesheet" href="{% static 'bboard/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'bboard/css/main.css' %}">
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+    <link rel="stylesheet" href="{% static 'bboard/css/main.css' %}">
 
-        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'bboard/img/favicon/favicon-32x32.png' %}">
-        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'bboard/img/favicon/favicon-16x16.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'bboard/img/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'bboard/img/favicon/favicon-16x16.png' %}">
 
-    </head>
-    <body>
-        <header>
-            <h1>Обьявления</h1>
-        </header>
+</head>
+<body>
+<header>
+    <h1>Обьявления</h1>
+</header>
         <nav class="nav flex-column">
             <a class="nav-link" href="{% url 'bboard:index' %}">Главная</a>
             <a class="nav-link" href="{% url 'bboard:add' %}">Добавить</a>

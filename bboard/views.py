@@ -31,6 +31,7 @@ class BbByRubricView(ListView):
 
 class BbDetailView(DetailView):
     model = Bb
+    template_name = 'bb_detail.html'
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
@@ -64,6 +65,7 @@ class BbEditView(UpdateView):
 class BbDeleteView(DeleteView):
     model = Bb
     success_url = '/'
+    template_name = 'bb_confirm_delete.html'
 
     def get_context_data(self, *args, **kwargs):
         context = super().get_context_data(*args, **kwargs)
