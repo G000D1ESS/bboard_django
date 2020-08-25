@@ -1,0 +1,22 @@
+{% extends "layout/basic.html" %}
+
+{% block title %}Удаление объявления{% endblock %}
+
+{% block content %}
+    <div class="col-8">
+        <h2>Удаление объявления:</h2>
+        <hr>
+        <div>
+            <p>Рубрика: <strong>{{ bb.rubric.name }}</strong></p>
+            <p>{{ bb.content }}</p>
+            <p>Цена: <strong>{{ bb.price|floatformat:"0" }}₽</strong></p>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">
+                Удалить
+            </button>
+        </form>
+    </div>
+
+{% endblock %}

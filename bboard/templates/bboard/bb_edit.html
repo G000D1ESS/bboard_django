@@ -1,0 +1,20 @@
+{% extends "layout/basic.html" %}
+{% load bootstrap4 %}
+
+{% block title %}Исправление объявления{% endblock %}
+
+{% block content %}
+    <div class="col-8">
+        <h2>Исправление объявления:</h2>
+        <hr>
+        <form method="POST" class="form">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% buttons %}
+                <button type="submit" class="btn btn-primary">
+                    Сохранить
+                </button>
+            {% endbuttons %}
+        </form>
+    </div>
+{% endblock %}

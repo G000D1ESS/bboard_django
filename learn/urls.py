@@ -6,8 +6,6 @@ from django.contrib.auth.views import LoginView, LogoutView, \
     PasswordResetConfirmView, PasswordResetCompleteView
 
 
-from bboard.views import index
-
 urlpatterns = [
     path('', include('bboard.urls'), name=''),
     path('admin/', admin.site.urls),

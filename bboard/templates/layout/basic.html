@@ -2,7 +2,7 @@
 {% load bootstrap4 %}
 
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>{% block title %}Главная{% endblock %} - Доска обьявлений</title>
@@ -16,20 +16,44 @@
 
 </head>
 <body>
-<header>
-    <h1>Обьявления</h1>
-</header>
-        <nav class="nav flex-column">
-            <a class="nav-link" href="{% url 'bboard:index' %}">Главная</a>
-            <a class="nav-link" href="{% url 'bboard:add' %}">Добавить</a>
-            {% for rubric in rubrics %}
-                <a class="nav-link" href="{% url 'bboard:by_rubric' rubric.pk %}">{{ rubric.name }}</a>
-            {% endfor %}
-        </nav>
-        <section>
-            {% block content %}
-            {% endblock %}
-        </section>
-    </body>
+<header class="navbar navbar-expand site-header sticky-top">
+    <a class="navbar-brand">
+        <div class="d-flex align-items-center justify-content-center">
+            <svg width="24px" height="24px" viewBox="0 0 16 16" class="bi bi-x-diamond-fill" fill="white"
+                 xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                      d="M9.05.435c-.58-.58-1.52-.58-2.1 0L4.047 3.339 8 7.293l3.954-3.954L9.049.435zm3.61 3.611L8.708 8l3.954 3.954 2.904-2.905c.58-.58.58-1.519 0-2.098l-2.904-2.905zm-.706 8.615L8 8.707l-3.954 3.954 2.905 2.904c.58.58 1.519.58 2.098 0l2.905-2.904zm-8.615-.707L7.293 8 3.339 4.046.435 6.951c-.58.58-.58 1.519 0 2.098l2.904 2.905z"></path>
+            </svg>
+        </div>
+    </a>
 
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link nav-home" href="{% url 'bboard:index' %}">Главная</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'bboard:add' %}">Добавить</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Рубрики
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for rubric in rubrics %}
+                        <a class="dropdown-item" href="{% url 'bboard:by_rubric' rubric.pk %}">{{ rubric.name }}</a>
+                    {% endfor %}
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</header>
+<section class="position-relative overflow-hidden">
+    {% block content %}
+    {% endblock %}
+</section>
+</body>
 </html>

@@ -1,21 +1,22 @@
 {% extends "layout/basic.html" %}
 
-{% block content %}
-    <div class="container products">
-    {% for bb in bbs %}
+{% block title %} {{ current_rubric.name }} {% endblock %}
 
-        {% if forloop.counter0|divisibleby:"2" == True %}
-            {% if forloop.first != True %}
-                </div>
+{% block content %}
+    <h2 class="container block_name text-center">{{ current_rubric.name }}:</h2>
+    <hr>
+    <div class="container products">
+        {% for bb in bbs %}
+
+            {% if forloop.counter0|divisibleby:"2" == True %}
+                {% if forloop.first != True %}
+                    </div>
+                {% endif %}
+                <div class="row">
             {% endif %}
-            <div class="row">
-        {% endif %}
 
         <div class="col-6">
             <div class="card text-left">
-                <div class="card-header">
-                    {{ bb.rubric.name }}
-                </div>
                 <div class="card-body">
                     <h5 class="card-title">
                         <a href="{% url 'bboard:detail' pk=bb.pk %}">{{ bb.title }}</a>

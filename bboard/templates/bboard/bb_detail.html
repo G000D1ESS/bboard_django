@@ -1,0 +1,16 @@
+{% extends "layout/basic.html" %}
+
+{% block title %} {{ bb.title }} {% endblock %}
+
+{% block content %}
+    <div class="col-8">
+        <h2>{{ bb.title }}:</h2>
+        <hr>
+        <div>
+            <p>Рубрика: <strong>{{ bb.rubric.name }}</strong></p>
+            <p>{{ bb.content }}</p>
+            <p>Цена: <strong>{{ bb.price|floatformat:"0" }}₽</strong></p>
+        </div>
+    </div>
+
+{% endblock %}

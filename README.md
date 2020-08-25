@@ -1,6 +1,6 @@
 # BBoard on Django
 
-![Preview](https://i.yapx.ru/Ino9T.jpg)
+![Preview](https://i.yapx.ru/Iu7ZZ.jpg)
 
 ##### This project was created to **advertise the sale of goods on the Internet.**
 
