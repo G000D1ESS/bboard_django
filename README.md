@@ -18,6 +18,8 @@ pip install -r requirements.txt
 # Replace your personal DB info in settings.py
 
 python manage.py migrate
+python manage.py createsuperuser
+
 python manage.py runserver localhost:80
 ```
 
