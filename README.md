@@ -13,6 +13,10 @@ git clone https://github.com/G000D1ESS/bboard_django.git
 
 cd bboard
 pip install -r requirements.txt
+
+# Rename example_settings.py to settings.py in learn folder
+# Replace your personal DB info in settings.py
+
 python manage.py migrate
 python manage.py runserver localhost:80
 ```
