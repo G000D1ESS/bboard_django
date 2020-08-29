@@ -11,5 +11,6 @@ urlpatterns = [
     path('edit/<int:pk>/', BbEditView.as_view(), name='edit'),
     path('delete/<int:pk>/', BbDeleteView.as_view(), name='delete'),
     path('detail/<int:pk>/', BbDetailView.as_view(), name='detail'),
-    path('detail/<int:year>/<int:month>/<int:day>/<int:pk>/', BbRedirectView.as_view(), name='old_detail')
+    path('detail/<int:year>/<int:month>/<int:day>/<int:pk>/', BbRedirectView.as_view(), name='old_detail'),
+    path('add_image', add_image, name='add_image'),
 ]

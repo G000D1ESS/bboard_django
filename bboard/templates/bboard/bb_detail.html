@@ -7,9 +7,15 @@
         <h2>{{ bb.title }}:</h2>
         <hr>
         <div>
-            <p>Рубрика: <strong>{{ bb.rubric.name }}</strong></p>
-            <p>{{ bb.content }}</p>
-            <p>Цена: <strong>{{ bb.price|floatformat:"0" }}₽</strong></p>
+            {% if bb.image %}
+                <img class="bboard-image" src="{{ bb.image.url }}" alt="{{ bb.title }}">
+                <br>
+            {% endif %}
+            <div class="bboard-content">
+                <p>Рубрика: <strong>{{ bb.rubric.name }}</strong></p>
+                <p>{{ bb.content }}</p>
+                <p>Цена: <strong>{{ bb.price|floatformat:"0" }}₽</strong></p
+            </div>
         </div>
     </div>
 

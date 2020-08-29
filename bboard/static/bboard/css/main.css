@@ -67,4 +67,11 @@ section {
     color: #323232;
 }
 
+.bboard-image {
+    border-radius: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
 

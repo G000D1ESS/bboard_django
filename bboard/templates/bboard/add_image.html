@@ -1,10 +1,10 @@
 {% extends "layout/basic.html" %}
 {% load bootstrap4 %}
 
-{% block title %}Добавление объявления{% endblock %}
+{% block title %}Добавить изображение:{% endblock %}
 
 {% block content %}
-    <h2 class="container block_name text-center">Добавление объявления:</h2>
+    <h2 class="container block_name text-center">Добавить изображение:</h2>
     <hr>
     <form method="POST" class="form col-8" enctype="multipart/form-data">
         {% csrf_token %}
