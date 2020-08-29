@@ -34,11 +34,15 @@ class Rubric(models.Model):
 
 class Bb(models.Model):
     title = models.CharField(max_length=50, verbose_name='Товар')
-    image = models.ImageField(null=True, verbose_name='Изображение')
+    image = models.ImageField(null=True, verbose_name='Изображение', upload_to=get_timestamp_path)
     content = models.TextField(null=True, blank=True, verbose_name='Описание')
     price = models.FloatField(null=True, blank=True, verbose_name='Цена')
     published = models.DateTimeField(auto_now_add=True, db_index=True, verbose_name='Опубликовано')
     rubric = models.ForeignKey('Rubric', null=True, on_delete=models.PROTECT, verbose_name='Рубрика')
+
+    def delete(self, *args, **kwargs):
+        self.image.delete(save=False)
+        super().delete(*args, **kwargs)
 
     class Meta:
         verbose_name_plural = 'Обьявления'
